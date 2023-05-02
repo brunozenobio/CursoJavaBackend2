@@ -1,0 +1,8 @@
+/*
+UPDATE PARA MODIFICAR DATOS DE LA TABL|A
+*/
+
+SELECT * FROM new_table;
+UPDATE new_table
+	SET NOMBRE = 'tobias'
+WHERE EDAD = 15; 

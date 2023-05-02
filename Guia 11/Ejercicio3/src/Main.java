@@ -20,7 +20,10 @@ public class Main {
         nuevaBaraja.setCartas(auxCartas);
         nuevaBaraja.setCartasDisponibles(nuevaBaraja.getCartas());
         nuevaBaraja.mostrarBaraja();
-
+        nuevaBaraja.barajar();
+        System.out.println("===============");
+        nuevaBaraja.mostrarBaraja();
+        System.out.println("===============");
 
         nuevaBaraja.cartaCDisponibles();
         nuevaBaraja.siguienteCarta();

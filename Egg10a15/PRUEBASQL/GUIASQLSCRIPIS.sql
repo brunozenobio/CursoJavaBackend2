@@ -1,0 +1,45 @@
+/*
+	CREAR DATABASE
+
+*/
+
+CREATE DATABASE ejemploEgg;
+
+/*
+	AGREGAR FILAS CON VALORES
+*/
+SELECT * FROM new_table;
+
+INSERT INTO new_table (ID_TABLE,NOMBRE,APELLIDO,EDAD) VALUES(1,'bruno','zenobio',25);
+INSERT INTO new_table (ID_TABLE,NOMBRE,APELLIDO,EDAD) VALUES(2,'angela','rivero',25);
+INSERT INTO new_table (ID_TABLE,NOMBRE,APELLIDO,EDAD) VALUES(3,'carlos','pelir',10);
+INSERT INTO new_table (ID_TABLE,NOMBRE,APELLIDO,EDAD) VALUES(4,'gonzalo','perez',55);
+INSERT INTO new_table (ID_TABLE,NOMBRE,APELLIDO,EDAD) VALUES(5,'alfredo','bañero',32);
+
+
+/*
+MODIFICANDO VALORES DE LA TABLA
+*/
+
+
+SELECT * FROM new_table;
+
+UPDATE new_table
+	SET EDAD = 30
+WHERE ID_TABLE = 4;
+
+/*
+ELIMINAR VALORES
+*/
+SELECT * FROM new_table;
+DELETE 
+	FROM new_table
+WHERE id_table = 3;
+
+
+
+
+
+
+
+
