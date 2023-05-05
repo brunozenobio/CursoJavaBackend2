@@ -4,6 +4,8 @@
  */
 package Entidades;
 
+import java.util.Date;
+
 /**
  *
  * @author brunopc
@@ -11,7 +13,7 @@ package Entidades;
 public class Persona {
     private String nombre;
     private String apellido;
-    private int edad;
+    private Date nacimiento;
     private long dni;
     private Perro mascota;
 
@@ -34,12 +36,12 @@ public class Persona {
         this.apellido = apellido;
     }
 
-    public int getEdad() {
-        return edad;
+    public Date getEdad() {
+        return nacimiento;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public void setNacimiento(Date nacimiento) {
+        this.nacimiento = nacimiento;
     }
 
     public long getDni() {
@@ -60,7 +62,7 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", dni=" + dni + ", mascota=" + mascota.toString() + '}';
+        return "Persona{" + "nombre=" + nombre + ", apellido=" + apellido + ", Nacimiento =" + nacimiento + ", dni=" + dni + ", mascota=" + mascota.toString() + '}';
     }
 
     

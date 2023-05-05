@@ -4,6 +4,8 @@
  */
 package Entidades;
 
+import java.util.Date;
+
 /**
  *
  * @author brunopc
@@ -41,7 +43,7 @@ public class Perro {
         this.raza = raza;
     }
 
-    public int getEdad() {
+    public int  getEdad() {
         return edad;
     }
 
@@ -59,7 +61,7 @@ public class Perro {
 
     @Override
     public String toString() {
-        return "Perro{" + "nombre=" + nombre + ", raza=" + raza + ", edad=" + edad + ", tama\u00f1o=" + tamaño + '}';
+        return "Perro{" + "nombre=" + nombre + ", raza=" + raza + ", Edad=" + edad + ", tama\u00f1o=" + tamaño + '}';
     }
     
 }
