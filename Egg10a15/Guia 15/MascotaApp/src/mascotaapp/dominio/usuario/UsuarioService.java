@@ -5,6 +5,7 @@
  */
 package mascotaapp.dominio.usuario;
 
+import java.util.ArrayList;
 import mascotaapp.persistencia.UsuarioDAO;
 
 
@@ -51,6 +52,11 @@ public class UsuarioService {
         }catch(Exception e){
             throw e;
         }
+    }
+    
+    public void crearListaUsuarios(){
+        ArrayList<Usuario> usuarios = new ArrayList();
+        
     }
     
     
