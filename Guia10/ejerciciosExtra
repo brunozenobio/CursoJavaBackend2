@@ -1,3 +1,19 @@
+1. Diseñar un programa que lea una serie de valores numéricos enteros desde el teclado
+y los guarde en un ArrayList de tipo Integer. La lectura de números termina cuando se
+introduzca el valor -99. Este valor no se guarda en el ArrayList. A continuación, el
+programa mostrará por pantalla el número de valores que se han leído, su suma y su
+media (promedio).
+2. Crear una clase llamada CantanteFamoso. Esta clase guardará cantantes famosos y
+tendrá como atributos el nombre y discoConMasVentas.
+Se debe, además, en el main, crear una lista de tipo CantanteFamoso y agregar 5
+objetos de tipo CantanteFamoso a la lista. Luego, se debe mostrar los nombres de
+cada cantante y su disco con más ventas por pantalla.
+Una vez agregado los 5, en otro bucle, crear un menú que le de la opción al usuario de
+agregar un cantante más, mostrar todos los cantantes, eliminar un cantante que el
+usuario elija o de salir del programa. Al final se deberá mostrar la lista con todos los
+cambios.
+
+
 3. Implemente un programa para una Librería haciendo uso de un HashSet para evitar
 datos repetidos. Para ello, se debe crear una clase llamada Libro que guarde la
 información de cada uno de los libros de una Biblioteca. La clase Libro debe guardar
