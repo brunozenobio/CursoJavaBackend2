@@ -1,27 +1,36 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package mascotaapp.dominio.usuario;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-public class Usuario {
-    private int id;
+/**
+ *
+ * @author brunopc
+ */
+@Entity
+public class Usuario implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+    @Id
+    private String id;
+    private String nombre;
     private String correoElectronico;
-    private String clave;
+    private String password;
 
-    public Usuario() {
+    public String getNombre() {
+        return nombre;
     }
 
-    public Usuario(int id, String correoElectronico, String clave) {
-        this.id = id;
-        this.correoElectronico = correoElectronico;
-        this.clave = clave;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getCorreoElectronico() {
@@ -32,12 +41,46 @@ public class Usuario {
         this.correoElectronico = correoElectronico;
     }
 
-    public String getClave() {
-        return clave;
+    public String getPassword() {
+        return password;
     }
 
-    public void setClave(String clave) {
-        this.clave = clave;
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Usuario)) {
+            return false;
+        }
+        Usuario other = (Usuario) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "mascotaapp.dominio.mascota.Usuario[ id=" + id + " ]";
     }
     
 }

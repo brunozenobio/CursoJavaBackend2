@@ -1,63 +1,68 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package mascotaapp.dominio.usuario;
 
-import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.UUID;
 import mascotaapp.persistencia.UsuarioDAO;
+
 
 
 public class UsuarioService {
     
-    private UsuarioDAO dao;
+    Scanner read = new Scanner(System.in).useDelimiter("\n");
     
-    public UsuarioService(){
-        this.dao = new UsuarioDAO();
-    }
-    
-    public void crearUsuario(String correoElectronico,String clave) throws Exception{
-        try{
-            /*PRIMERO VALIDO*/
-            if(correoElectronico == null || correoElectronico.trim().isEmpty()){
-                throw new Exception("Debe indicar un correo electronico");
-                
+    public void crearUsuario() throws Exception{
+        Usuario user = new Usuario();
+        user.setId(UUID.randomUUID().toString());
+        System.out.println("Ingrese los datos del usuario");
+        System.out.print("Nombre: ");
+        String nombre = read.next();
+        System.out.print("Correo electronico: ");
+        String correoElectronico = read.next();
+        System.out.print("Contraseña: ");
+        String clave = read.next();
+        
+        
+        try {
+            if(nombre == null || nombre.trim().isEmpty()){
+                throw new Exception("Debe indicar un nombre");
             }
-            if(correoElectronico.contains("@") == false){
-                throw new Exception("El correo electronico es incorrecto");
-                
+            if (correoElectronico == null || correoElectronico.trim().isEmpty()) {
+                throw new Exception("Debe indicar el correo electrónico");
             }
-            
-            if(clave == null || clave.trim().isEmpty()){
+            if (correoElectronico.contains("@") == false) {
+                throw new Exception("El correo electrónico es incorrecto");
+            }
+            if (clave == null || clave.trim().isEmpty()) {
                 throw new Exception("Debe indicar la clave");
             }
-            if(clave.length() < 8 ){
-                throw new Exception ("La clave no puede ser menor a 8 digios");
+            if (clave.length() < 8) {
+                throw new Exception("La clave no puede tener menos de 8 caracteres");
             }
-            
-            if(dao.buscarUsuarioPorCorreoElectronico(correoElectronico) !=null){/*NO SE REPITE*/
-                throw new Exception("Ya existe un usuario con ese correo electronico");
-                
-            }
-            
-            /*SI EL USUARIO CUMPLE CON LA VALIDACION LO CREAMOS*/
-            
-            Usuario usuario = new Usuario();
-            usuario.setCorreoElectronico(correoElectronico);
-            usuario.setClave(clave);
-            dao.guardarUsuario(usuario);
-            
-            
-        }catch(Exception e){
+        } catch (Exception e) {
             throw e;
         }
+        
+        user.setNombre(nombre);
+        user.setCorreoElectronico(correoElectronico);
+        user.setPassword(clave);
+        
+        
+        UsuarioDAO.saveUser(user);  
     }
     
-    public void crearListaUsuarios(){
-        ArrayList<Usuario> usuarios = new ArrayList();
+    public void consultarUsuariPorCorreoElectronico(String correoElectronico){
+        Usuario user = UsuarioDAO.consulEmail(correoElectronico);
+        System.out.println("Usuario:");
+        System.out.print("Nombre: " + user.getNombre());
+        System.out.println("");
+        System.out.print("Correo: " + user.getCorreoElectronico());
+        System.out.println("");
+        System.out.print("Coontraseña: " + user.getPassword());
+        System.out.println("");
         
     }
+    
     
     
 }
