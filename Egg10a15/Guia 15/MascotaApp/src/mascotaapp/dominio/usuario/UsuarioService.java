@@ -51,7 +51,7 @@ public class UsuarioService {
         UsuarioDAO.saveUser(user);  
     }
     
-    public void consultarUsuariPorCorreoElectronico(String correoElectronico){
+    public Usuario consultarUsuariPorCorreoElectronico(String correoElectronico){
         Usuario user = UsuarioDAO.consulEmail(correoElectronico);
         System.out.println("Usuario:");
         System.out.print("Nombre: " + user.getNombre());
@@ -60,6 +60,7 @@ public class UsuarioService {
         System.out.println("");
         System.out.print("Coontraseña: " + user.getPassword());
         System.out.println("");
+        return user;
         
     }
     

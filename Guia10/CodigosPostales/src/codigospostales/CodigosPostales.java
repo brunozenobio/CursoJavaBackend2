@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class CodigosPostales {
 
     public static void main(String[] args) {
-        Scanner read = new Scanner(System.in);
+        Scanner read = new Scanner(System.in).useDelimiter("\n");
         HashMap<Integer,String> ciudades = new HashMap();
         
         String opcion = "";
@@ -32,25 +32,23 @@ public class CodigosPostales {
         System.out.println("Ingrese un codigo postal para buscar entre las ciudades");
         int codigoNuevo = read.nextInt();
         
-        boolean aux = true;
-        
-        for(Map.Entry ciud: ciudades.entrySet()){
-            if(ciud.getKey().equals(codigoNuevo)){
-                System.out.println("La ciudaded encontrada con ese codigo fue: " + ciud.getValue());
-            }else{
-                aux = false;
-            }
-        }
-        
-        if(!aux){
+        if(ciudades.containsKey(codigoNuevo)){
+            System.out.println("La ciudad asociada al codigo " + codigoNuevo + " es " + ciudades.get(codigoNuevo)  );
+            
+        }else{
             System.out.println("No hubieron coicidencias de la ciudad con ese codigo postal.");
         }
         
-        System.out.println("Ingrese el nombre de un codigo postal, para eliminar a ka ciudad de la lista");
+        
+        System.out.println("Ingrese el nombre de un codigo postal, para eliminar a la ciudad de la lista");
         
         int removerCiudad = read.nextInt();
         
-        ciudades.remove(removerCiudad);
+        if(ciudades.containsKey(removerCiudad)){
+            ciudades.remove(removerCiudad);
+        }else{
+            System.out.println("Codigo inexistente");
+        }
         
         
         
