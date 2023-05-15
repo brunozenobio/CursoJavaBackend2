@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="main.java.com.mycompany.relacioncomposicionprueba">
+  <ClassDiagramComponents>
+    <Class name="Persona" package="com.mycompany.relacioncomposicionprueba" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="tipodePelo" type="Pelo" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="colorPelo" returnType="void" visibility="public">
+          <Argument type="String" name="color"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Pelo" package="com.mycompany.relacioncomposicionprueba" visibility="public" xPosition="293.0" yPosition="220.0">
+      <Fields>
+        <Field name="color" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getColor" returnType="String" visibility="public"/>
+        <Method name="setColor" returnType="void" visibility="public">
+          <Argument type="String" name="color"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="RelacionComposicionPrueba" package="com.mycompany.relacioncomposicionprueba" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="tipodePelo" source="com.mycompany.relacioncomposicionprueba.Persona" target="com.mycompany.relacioncomposicionprueba.Pelo" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

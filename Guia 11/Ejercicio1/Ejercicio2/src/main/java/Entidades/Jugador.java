@@ -44,14 +44,18 @@ public class Jugador {
     public boolean disparo(RevolverAgua rev){
         boolean mojado = rev.mojar();
         rev.siguienteChorro();
-
+        System.out.println("============================");
         System.out.println(nombre + ": Se apunta con el revovler y...");
         System.out.println("...disparo...");
         if(mojado){
+            System.out.println("============================");
             System.out.println("El  " + nombre  + " se ah mojado");
+            System.out.println("============================");
             return true;
         }else{
+            System.out.println("============================");
             System.out.println("El " + nombre + " se ah salvado");
+            System.out.println("============================");
             return false;
         }
     }
