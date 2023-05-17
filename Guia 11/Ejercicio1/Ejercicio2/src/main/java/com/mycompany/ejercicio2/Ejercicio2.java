@@ -35,7 +35,7 @@ public class Ejercicio2 {
             listaDeJugadores.add(jugador);
             System.out.println("Desea agregar otro jugador?");
             opcion = read.next();
-        } while (opcion.equalsIgnoreCase("s"));
+        } while (opcion.equalsIgnoreCase("s") || listaDeJugadores.size() == 6);
         
         nuevoJuego.llenarJuego(listaDeJugadores, revolver);
         nuevoJuego.ronda();

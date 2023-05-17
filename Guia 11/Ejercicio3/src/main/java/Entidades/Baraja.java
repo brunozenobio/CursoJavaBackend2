@@ -11,8 +11,16 @@ public class Baraja {
     public Baraja() {
         cartas = new ArrayList<>();
         cartasMonton = new ArrayList<>();
-        iteradorCartas = cartas.iterator();
     }
+
+    public Iterator<Carta> getIteradorCartas() {
+        return iteradorCartas;
+    }
+
+    public void setIteradorCartas(ArrayList<Carta> cartas) {
+        this.iteradorCartas = cartas.iterator();
+    }
+    
 
     public Baraja(ArrayList<Carta> cartas) {
         this.cartas = cartas;
@@ -47,13 +55,14 @@ public class Baraja {
     }
     public void barajar(){
         Collections.shuffle(cartas);
+        setIteradorCartas(cartas);
 
     }
     public void siguienteCarta(){
-        if(!iteradorCartas.hasNext()){
+        if(!getIteradorCartas().hasNext()){
             System.out.println("No hay mas cartas para mostrar");
         }else{
-            System.out.println("Proxima carta: " + iteradorCartas.next().toString());
+            System.out.println("Proxima carta: " + getIteradorCartas().next().toString());
         }
 
     }
@@ -111,10 +120,15 @@ public void cartasMonton(){
 }
 
 public void mostrarBaraja(){
-    System.out.println("Las cartas que aun quedan en la baraja son " + cartasDisponibles.size());
+    if(this == null){
+        System.out.println("La baraja aun esta vacia asegurese de crearla.");
+    }else{
+        System.out.println("Las cartas que aun quedan en la baraja son " + cartasDisponibles.size());
     for(Carta var: cartasDisponibles){
         System.out.println(var.toString());
 
     }
 }
+    }
+    
 }
