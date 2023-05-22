@@ -37,18 +37,18 @@ public class CineServices {
         
         for(int i = 0; i<9;i++){
             for(int j = 0;j<7;j++){
-                if(i==0 && j== 0){
-                    System.out.println(sala.getAsientos()[i][j].getFila());
+                if(j== 0 && i > 0){
+                    System.out.print(sala.getAsientos()[i-1][j].getFila());
                 }
                 if(i==0  && j<6){
-                    System.out.print(" " + sala.getAsientos()[i][j].getColumna() + " ");
+                    System.out.print("  " + sala.getAsientos()[i][j].getColumna() + "  ");
                 }
                 
                 if(i > 0 && j > 0){
                     if(sala.getAsientos()[i-1][j-1].isOcupado()){
                     System.out.print("| X |");
                 }else{
-                    System.out.print("| |");
+                    System.out.print("|   |");
                 }
                 }
                 
@@ -164,5 +164,27 @@ public class CineServices {
         System.out.print("Dinero disponible: ");
         double precio = read.nextDouble();
         return new Persona(nombre, edad, precio);
+    }
+    
+    
+    public void menuCine(){
+        SalaCine sala = iniciarSala();
+        Pelicula pelicula = crearPelicula();
+        String opcion = "";
+        sala.setPeliluca(pelicula);
+        System.out.println("==============================");
+        System.out.println("Sistema de venta de entradas");
+        do{
+            System.out.println("===============");
+            System.out.println("Pelicula: " + pelicula.getNombre());
+            Persona persona = crearPersona();
+            comprarEntrada(sala, persona);
+            System.out.println("===============");
+            mostrarSala(sala);
+            System.out.print("Seguir comprando?(s/n): ");
+            opcion = read.next();
+            
+            
+        }while(opcion.equalsIgnoreCase("s"));
     }
 }
