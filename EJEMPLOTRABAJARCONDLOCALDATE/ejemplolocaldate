@@ -1,0 +1,6 @@
+public int diasAlquilados() {
+        DateTimeFormatter formatoString = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate fechaAlquiler = LocalDate.parse(this.fechaAlquiler, formatoString);
+        
+        return (int) ChronoUnit.DAYS.between(fechaAlquiler, this.fechaDevolucion);
+    }

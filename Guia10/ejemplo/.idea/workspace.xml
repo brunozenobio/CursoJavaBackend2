@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be5548ba-02f8-4529-9a1a-3a2402dc9b6a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../Guia 12/Ejercicio 3Al/src/Entidades/Alumno.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Guia 12/Ejercicio 3Al/src/Service/AlumnoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Guia 12/Ejercicio 4/src/Entidades/Pelicula.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../Guia 12/Ejercicio 4/src/Service/PeliculaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Egg10a15/RELACIONESSQL/RELACIONTABLA 1 Y 2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../Egg10a15/RELACIONESSQL/RELACIONTABLA 1 Y 2.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Guia 11/UMLPROYECT3/Class Diagrams/newClassDiagramTemplate.cdg" beforeDir="false" afterPath="$PROJECT_DIR$/../../Guia 11/UMLPROYECT3/Class Diagrams/newClassDiagramTemplate.cdg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Ejercicio3/Ejercicio3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Ejercicio3/Ejercicio3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +20,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
@@ -42,6 +37,8 @@
       <option name="presentableId" value="Default" />
       <updated>1683163311278</updated>
       <workItem from="1683163312274" duration="35000" />
+      <workItem from="1685551354821" duration="14000" />
+      <workItem from="1685551382605" duration="47000" />
     </task>
     <servers />
   </component>
