@@ -1,14 +1,21 @@
 
 package extrahoteles.entidades;
 
-public class Hotel extends Alojamiento{
+
+
+public class Hotel extends Alojamiento implements Comparable<Hotel> {
     
     protected int cantHabitacions;
     protected int cantCamas;
     protected int cantPisos;
-    protected double precioDeHabitacion;
+    protected Double precioDeHabitacion;
 
     public Hotel() {
+    }
+
+    @Override
+    public int compare(Hotel hotel) {
+        return this.precioDeHabitacion.compareTo(hotel.precioDeHabitacion);
     }
 
     public Hotel(int cantHabitacions, int cantCamas, int cantPisos, double precioDeHabitacion, String nombre, String direccion, String localidad, Gerente gerente) {
@@ -64,7 +71,10 @@ public class Hotel extends Alojamiento{
     public void calcularPrecioHabitacion(){
         precioDeHabitacion = 50d + cantCamas;
     }
-    
-    
-    
+
+
+    @Override
+    public int compareTo(Hotel hotel) {
+        return hotel.precioDeHabitacion.compareTo(this.precioDeHabitacion);
+    }
 }

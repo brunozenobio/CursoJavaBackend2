@@ -19,6 +19,30 @@ public final class Residencias extends AlojExtra{
         this.descGremios = descGremios;
         this.campoDeportivo = campoDeportivo;
     }
+
+    public int getCantHabitacions() {
+        return cantHabitacions;
+    }
+
+    public void setCantHabitacions(int cantHabitacions) {
+        this.cantHabitacions = cantHabitacions;
+    }
+
+    public boolean isDescGremios() {
+        return descGremios;
+    }
+
+    public void setDescGremios(boolean descGremios) {
+        this.descGremios = descGremios;
+    }
+
+    public boolean isCampoDeportivo() {
+        return campoDeportivo;
+    }
+
+    public void setCampoDeportivo(boolean campoDeportivo) {
+        this.campoDeportivo = campoDeportivo;
+    }
     
     
     

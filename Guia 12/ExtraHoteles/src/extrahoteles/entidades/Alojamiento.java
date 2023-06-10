@@ -1,7 +1,7 @@
 
 package extrahoteles.entidades;
 
-public class Alojamiento {
+public abstract class Alojamiento {
     protected String nombre;
     protected String direccion;
     protected String localidad;
@@ -49,6 +49,6 @@ public class Alojamiento {
         this.gerente = gerente;
     }
 
-    
-    
+
+    public abstract int compare(Hotel hotel);
 }

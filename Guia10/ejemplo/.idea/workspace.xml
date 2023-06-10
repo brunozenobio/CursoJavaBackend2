@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="be5548ba-02f8-4529-9a1a-3a2402dc9b6a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Guia 12/ExtraHoteles/src/extrahoteles/ExtraHoteles.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Guia 12/ExtraHoteles/src/extrahoteles/ExtraHoteles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Guia 12/ExtraHoteles/src/extrahoteles/entidades/Residencias.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Guia 12/ExtraHoteles/src/extrahoteles/entidades/Residencias.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Guia 12/ExtraHoteles/src/extrahoteles/serices/ServicioAlojamintos.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Guia 12/ExtraHoteles/src/extrahoteles/serices/ServicioAlojamintos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +32,11 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "/home/brunopc/CursoEggJava/JavaEgg2/Guia10/ejemplo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -39,6 +51,8 @@
       <workItem from="1683163312274" duration="35000" />
       <workItem from="1685551354821" duration="14000" />
       <workItem from="1685551382605" duration="47000" />
+      <workItem from="1685833425296" duration="12000" />
+      <workItem from="1685836420873" duration="880000" />
     </task>
     <servers />
   </component>
