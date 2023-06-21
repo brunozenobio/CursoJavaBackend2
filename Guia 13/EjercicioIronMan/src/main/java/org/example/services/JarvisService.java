@@ -43,20 +43,25 @@ public class JarvisService {
     //DESPLAZAMIENTO
 
     public float caminar(Armadura a,float tiempo){
-        //Verificar daños
         // verificar cantidad disponible de bateria
-        if(sufrirDanio(a) < 30){
+        if(sufrirDanio(a) < 30 && sufrirDanio(a)<30){
             a.getBotaDerecha().setDaniado(true);
             a.getBotaIzquierda().setDaniado(true);
+            consumoConsola(a);
+            System.out.println("Las botas estan dañadas");
+            return 0;
         }
         return (a.getBotaDerecha().getConsumo() + a.getBotaIzquierda().getConsumo())  * tiempo;
     }
     public float correr(Armadura a,float tiempo){
         //Verificar daños
         // verificar cantidad disponible de bateria
-        if(sufrirDanio(a) < 30){
+        if(sufrirDanio(a) < 30 && sufrirDanio(a)<30){
             a.getBotaDerecha().setDaniado(true);
             a.getBotaIzquierda().setDaniado(true);
+            consumoConsola(a);
+            System.out.println("Las botas estan dañadas.");
+            return 0;
         }
         return  (a.getBotaDerecha().getConsumo() + a.getBotaIzquierda().getConsumo())  * tiempo * 2;
     }
@@ -64,14 +69,19 @@ public class JarvisService {
     public float propulsarse(Armadura a,float tiempo){
         //Verificar daños
         // verificar cantidad disponible de bateria
-        sufrirDanio(a);
-        if(sufrirDanio(a) < 30){
+        if(sufrirDanio(a) < 30 || sufrirDanio(a)<30){
             a.getBotaDerecha().setDaniado(true);
             a.getBotaIzquierda().setDaniado(true);
+            consumoConsola(a);
+            System.out.println("Las botas estan bañdas");
+            return 0;
         }
-        if(sufrirDanio(a) < 30){
+        if(sufrirDanio(a) < 30 || sufrirDanio(a)<30){
             a.getGuanteIzquierdo().setDaniado(true);
             a.getGuanteDerecho().setDaniado(true);
+            consumoConsola(a);
+            System.out.println("Los guantes estan dañados.");
+            return 0;
         }
         return  (a.getBotaDerecha().getConsumo() + a.getBotaIzquierda().getConsumo())  * tiempo * 3;
     }
@@ -79,12 +89,25 @@ public class JarvisService {
     public float volar(Armadura a, float tiempo) {
         //Verificar daños
         // verificar cantidad disponible de bateria
-        sufrirDanio(a);
+        if(sufrirDanio(a) < 30 || sufrirDanio(a)<30){
+            a.getBotaDerecha().setDaniado(true);
+            a.getBotaIzquierda().setDaniado(true);
+            consumoConsola(a);
+            System.out.println("Las botas estan bañdas");
+            return 0;
+        }
+        if(sufrirDanio(a) < 30 || sufrirDanio(a)<30){
+            a.getGuanteIzquierdo().setDaniado(true);
+            a.getGuanteDerecho().setDaniado(true);
+            consumoConsola(a);
+            System.out.println("Los guantes estan dañados.");
+            return 0;
+        }
         return  ((a.getBotaDerecha().getConsumo() + a.getBotaIzquierda().getConsumo())  * 3 + 2 * (a.getGuanteDerecho().getConsumo()
         + a.getGuanteIzquierdo().getConsumo())) * tiempo;
     }
 
-    //llamar cada vez que hay que mostar en consola
+    //llamar cada vez que hay que mostar en consola //FALTAN DESDEE ACA COMPROBAR EL DAÑO
     public float consumoConsola(Armadura a){
 
         return a.getCasco().getConsola().getConsumo();
@@ -136,6 +159,7 @@ public class JarvisService {
         return rand.nextFloat(100) + 1;
 
     }
+
 
 
 
