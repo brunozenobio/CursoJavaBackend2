@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package libreria.entidades;
+package  libreria.entities;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,25 +16,28 @@ import javax.persistence.Id;
  * @author brunopc
  */
 @Entity
-public class Editorial implements Serializable {
+public class Autor implements Serializable {
 
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    @Column(unique = true)
     private String nombre;
     private Boolean alta;
 
-    public Editorial() {
-        alta = true;
+    public Autor() {
     }
 
-    public Editorial(String nombre) {
+    public Autor( String nombre) {
+        alta = true;
         this.nombre = nombre;
         this.alta = alta;
-        alta = true;
     }
+    
 
     public String getNombre() {
+        alta = true;
         return nombre;
     }
 
@@ -50,9 +54,13 @@ public class Editorial implements Serializable {
     }
 
     
+    
+    
+    
     public Integer getId() {
         return id;
     }
+    
 
     public void setId(Integer id) {
         this.id = id;
@@ -68,10 +76,10 @@ public class Editorial implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Editorial)) {
+        if (!(object instanceof Autor)) {
             return false;
         }
-        Editorial other = (Editorial) object;
+        Autor other = (Autor) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -80,7 +88,7 @@ public class Editorial implements Serializable {
 
     @Override
     public String toString() {
-        return "libreria.entidades.Editorial[ id=" + id + " ]";
+        return "libreria.entidades.Autor[ id=" + id + " ]";
     }
     
 }

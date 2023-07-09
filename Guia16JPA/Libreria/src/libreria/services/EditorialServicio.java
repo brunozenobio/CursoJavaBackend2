@@ -2,12 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package libreria.servicios;
+package libreria.services;
+
+import libreria.entities.Editorial;
+
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import libreria.entidades.Editorial;
+
 
 /**
  *
@@ -48,5 +51,28 @@ public class EditorialServicio {
             throw e;
         }
     }
-    
+    public void darDeAlta(Editorial editorial) {
+        try {
+
+            editorial.setAlta(true);
+            em.getTransaction().begin();
+            em.merge(editorial);
+            em.getTransaction().commit();
+
+        } catch (Exception e) {
+            throw e;
+        }
+    }
+    public void darDeBaja(Editorial editorial) {
+        try {
+
+            editorial.setAlta(false);
+            em.getTransaction().begin();
+            em.merge(editorial);
+            em.getTransaction().commit();
+
+        } catch (Exception e) {
+            throw e;
+        }
+}
 }
