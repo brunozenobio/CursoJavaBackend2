@@ -31,8 +31,7 @@ public class Editorial implements Serializable {
 
     public Editorial(String nombre) {
         this.nombre = nombre;
-        this.alta = alta;
-        alta = true;
+        this.alta = true;
     }
 
     public String getNombre() {

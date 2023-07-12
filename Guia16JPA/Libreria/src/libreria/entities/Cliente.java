@@ -21,7 +21,7 @@ public class Cliente implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     @Column(unique=true)
     private Long documento;
     private String nombre;
@@ -74,11 +74,11 @@ public class Cliente implements Serializable {
     
     
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

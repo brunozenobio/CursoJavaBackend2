@@ -40,14 +40,15 @@ public class Libro implements Serializable {
 
     public Libro() {
         alta = true;
+        ejemplaresPrestados = 0;
     }
 
-    public Libro(String titulo, Integer anio, Integer ejemplares, Integer ejemplaresPrestados, Integer ejemplaresRestantes, Autor autor, Editorial editorial) {
+    public Libro(String titulo, Integer anio, Integer ejemplares, Autor autor, Editorial editorial) {
         this.titulo = titulo;
         this.anio = anio;
         this.ejemplares = ejemplares;
-        this.ejemplaresPrestados = ejemplaresPrestados;
-        this.ejemplaresRestantes = ejemplaresRestantes;
+        this.ejemplaresPrestados = 0;
+        this.ejemplaresRestantes =ejemplares;
         this.alta = alta;
         this.autor = autor;
         this.editorial = editorial;

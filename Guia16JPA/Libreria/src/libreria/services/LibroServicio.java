@@ -113,37 +113,35 @@ public class LibroServicio {
             throw e;
         }
     }
-    
-    public List<Libro> buscarPorTitulo(String titulo){
+
+    public List<Libro> buscarPorTitulo(String titulo) {
         try {
             List<Libro> libros = em.createQuery("select li from Libro li where li.titulo=:titutlo").setParameter("titulo", titulo).getResultList();
             return libros;
         } catch (Exception e) {
             throw e;
         }
-            
+
     }
-    
-    public List<Libro> buscarPorAutor(String nombre){
+
+    public List<Libro> buscarPorAutor(String nombre) {
         try {
             List<Libro> libros = em.createQuery("Select li from Libro li join li.autor a where a.nombre=:nombre ").setParameter("nombre", nombre).getResultList();
             return libros;
-            
+
         } catch (Exception e) {
             throw e;
         }
     }
-    public List<Libro> buscarPorEditorial(String nombre){
+
+    public List<Libro> buscarPorEditorial(String nombre) {
         try {
             List<Libro> libros = em.createQuery("Select li from Libro li join li.editorial a where a.nombre=:nombre ").setParameter("nombre", nombre).getResultList();
             return libros;
-            
+
         } catch (Exception e) {
             throw e;
         }
     }
-    
-    
-    
 
 }

@@ -6,11 +6,10 @@ package libreria.services;
 
 import libreria.entities.Editorial;
 
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-
+import static libreria.entities.Libro_.editorial;
 
 /**
  *
@@ -37,20 +36,26 @@ public class EditorialServicio {
             throw e;
         }
     }
-    public Editorial buscarPorId(Integer id) throws Exception{
+
+    public Editorial buscarPorId(Integer id) throws Exception {
         try {
-            
+
             Editorial editorial = em.find(Editorial.class, id);
-            if(!editorial.getAlta()){
-                throw new Exception("La editorial esta dada de baja");
+            if (editorial != null) {
+                if (!editorial.getAlta()) {
+                    throw new Exception("La editorial esta dada de baja");
+                }
+            } else {
+                throw new Exception("La editorial no existe");
             }
+
             return editorial;
-            
-            
+
         } catch (Exception e) {
             throw e;
         }
     }
+
     public void darDeAlta(Editorial editorial) {
         try {
 
@@ -63,6 +68,7 @@ public class EditorialServicio {
             throw e;
         }
     }
+
     public void darDeBaja(Editorial editorial) {
         try {
 
@@ -74,5 +80,5 @@ public class EditorialServicio {
         } catch (Exception e) {
             throw e;
         }
-}
+    }
 }
